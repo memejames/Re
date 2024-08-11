@@ -5566,7 +5566,7 @@ local function SCRIPT_32()
 		scriptname.Text = name
 		newhub.Visible = true
 		execbutton.MouseButton1Click:Connect(function()
-			cubix.schedule_script(source)
+			loadstring(source)()
 		end)
 		delbutton.MouseButton1Click:Connect(function()
 			newhub:Destroy()
@@ -5639,7 +5639,7 @@ local function SCRIPT_32()
 		end)
 	end
 	execute.MouseButton1Click:Connect(function()
-		cubix.schedule_script(scriptBox.Text)
+		loadstring(scriptBox.Text)()
 	end)
 	clear.MouseButton1Click:Connect(function()
 		scriptBox.Text = ""
@@ -5652,7 +5652,7 @@ local function SCRIPT_32()
 	clip.MouseButton1Click:Connect(function()
 		local clipboardText = getclipboard()
 		if clipboardText then
-			local success, result = pcall(cubix.schedule_script(clipboardText))
+			local success, result = pcall(loadstring(clipboardText)())
 			if not success then
 				print("Error executing clipboard content: " .. result)
 			end
@@ -5773,7 +5773,7 @@ local function SCRIPT_32()
 	local function onQuickClipBoardClicked()
 		local clipboardText = getclipboard()
 		if clipboardText then
-			local success, result = pcall(cubix.schedule_script(clipboardText))
+			local success, result = pcall(loadstring(clipboardText))
 			if not success then
 				print("Error executing clipboard content: " .. result)
 			end
