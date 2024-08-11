@@ -5270,7 +5270,7 @@ local function loadUI()
 			newList.Visible = true
 
 			fev.MouseButton1Click:Connect(function()
-				writefile("Cubix/" .. scriptname, source)
+				writefile("scripts/" .. scriptname, source)
 				newList:Destroy()
 			end)
 
