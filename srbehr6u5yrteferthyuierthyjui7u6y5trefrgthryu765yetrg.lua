@@ -5270,7 +5270,7 @@ local function SCRIPT_31()
 		newList.Visible = true
 
 		fev.MouseButton1Click:Connect(function()
-			writefile("Cubix/" .. scriptname, source)
+			writefile("Scripts/" .. scriptname, source)
 			newList:Destroy()
 		end)
 
@@ -5551,7 +5551,7 @@ local function SCRIPT_32()
 	end
 
 	local function AddScript(name, source)
-		writefile("scripts/" .. name, source)
+		writefile("Scripts/" .. name, source)
 
 		local parent = f2.ExecutorPage.SearchPage.mAIN
 		local hub = parent.Folder.ui9
@@ -5570,7 +5570,7 @@ local function SCRIPT_32()
 		end)
 		delbutton.MouseButton1Click:Connect(function()
 			newhub:Destroy()
-			delfile("scripts/"..name)
+			delfile("Scripts/"..name)
 		end)
 	end
 
